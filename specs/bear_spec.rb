@@ -10,7 +10,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class TestBear < MiniTest::Test
 
   def setup
-    @bear1 = Bear.new("Baloo")
+    @bear1 = Bear.new("Baloo", "Sloth")
 
     @fish_list = Array.new
     list_of_names = %w[rob nemo tim frank steve jimmy]
@@ -22,6 +22,10 @@ class TestBear < MiniTest::Test
 
   def test_bear_has_name
     assert_equal("Baloo", @bear1.name)
+  end
+
+  def test_bear_has_type
+    assert_equal("Sloth", @bear1.type)
   end
 
   def test_bear_is_hungry
